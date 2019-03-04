@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+  <head>
+
+  </head>
+
+  <body>
+
+    <div id="content">
+      <%= yield %>
+    </div>
+
+  <% if @users.include?(@path) %>
+    <ul>
+      <% @users.each do |name, info| %>
+        <% next if @path == name %>
+        <li>
+          <a href="/<%= name %>"><%= name %></a>
+        </li>
+        <% end %>
+    </ul>
+    <% end %>
+
+    <p>There are <%= @users.size %> users with a total of <%= @total_interests %> interests.</p>
+
+  </body>
+</html>

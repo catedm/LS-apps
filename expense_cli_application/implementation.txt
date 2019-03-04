@@ -1,0 +1,2 @@
+- add puts message with count of expenses to display_expense method
+- 
